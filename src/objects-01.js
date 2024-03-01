@@ -27,6 +27,15 @@
  */
 function makePetObject() {
   // write your code here & return value
+  const aPet = {
+    name: 'Coco',
+    age: 3,
+    species: 'Dog',
+    hasFur: true,
+    legs: 4,
+    bestFriend: 'me, duh',
+  };
+  return aPet.name;
 }
 
 /**
@@ -38,6 +47,8 @@ function makePetObject() {
  */
 function getPetName(pet) {
   // write your code here & return value
+  pet = this.name;
+  return pet;
 }
 
 /**
