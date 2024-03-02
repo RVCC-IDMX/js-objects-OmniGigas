@@ -33,9 +33,9 @@ function makePetObject() {
     species: 'Dog',
     hasFur: true,
     legs: 4,
-    bestFriend: 'me, duh',
+    bestFriend: 'Tom',
   };
-  return aPet.name;
+  return aPet;
 }
 
 /**
@@ -47,8 +47,7 @@ function makePetObject() {
  */
 function getPetName(pet) {
   // write your code here & return value
-  pet = this.name;
-  return pet;
+  return pet.name;
 }
 
 /**
@@ -61,6 +60,7 @@ function getPetName(pet) {
 function getPetAge(pet) {
   // eslint-disable-next-line dot-notation
   // write your code here & return value
+  return pet['age'];
 }
 
 /**
@@ -77,7 +77,9 @@ function getPetAge(pet) {
  * permanently making a change to the passed object.
  */
 function setPetAge(pet, age) {
-  // write your code here & return value
+  // write your code here & return
+  pet.age = 5;
+  return pet.age;
 }
 
 /**
@@ -87,6 +89,10 @@ function setPetAge(pet, age) {
  */
 function isPetABaby(pet) {
   // write your code here & return value
+  if (pet.age < 1) {
+    return true;
+  }
+  return false;
 }
 
 /**
