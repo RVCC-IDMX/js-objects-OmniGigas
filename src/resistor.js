@@ -14,40 +14,40 @@
    http://bit.ly/2NjS274
 */
 
-/**
+/*
   Here's a Lookup Table for the color codes for the first 2 bands, each color represents
   a digit from 0 to 9.
-    const colorCodes = {
-     black: 0,
-     brown: 1,
-     red: 2,
-     orange: 3,
-     yellow: 4,
-     green: 5,
-     blue: 6,
-     violet: 7,
-     grey: 8,
-     white: 9,
-  };
+*/
+const colorCodes = {
+  black: 0,
+  brown: 1,
+  red: 2,
+  orange: 3,
+  yellow: 4,
+  green: 5,
+  blue: 6,
+  violet: 7,
+  grey: 8,
+  white: 9,
+};
 
-    Here's a Lookup Table for the Multipliers. Each color represents the multiplication factor
-    that is used with the value from the first 2 bands.
+/*  Here's a Lookup Table for the Multipliers. Each color represents the multiplication factor
+    that is used with the value from the first 2 bands. */
 
-    const multiplierCodes = {
-     black:          1,
-     brown:         10,
-     red:          100,
-     orange:      1000,
-     yellow:     10000,
-     green:     100000,
-     blue:     1000000,
-     violet:  10000000,
-     grey:   100000000,
-     white: 1000000000,
-     gold: 0.1,
-     silver: 0.01
-  };
- */
+const multiplierCodes = {
+  black: 1,
+  brown: 10,
+  red: 100,
+  orange: 1000,
+  yellow: 10000,
+  green: 100000,
+  blue: 1000000,
+  violet: 10000000,
+  grey: 100000000,
+  white: 1000000000,
+  gold: 0.1,
+  silver: 0.01,
+};
 
 /**
  * Returns the digit as a number from the resistor color code
@@ -63,6 +63,7 @@
  */
 function getColorValue(color) {
   // write your code here & return value
+  return colorCodes[color];
 }
 
 /**
@@ -80,6 +81,7 @@ function getColorValue(color) {
  */
 function getMultiplierValue(color) {
   // write your code here & return value
+  return multiplierCodes[color];
 }
 
 /**
@@ -107,6 +109,9 @@ function getMultiplierValue(color) {
  */
 function getThreeBandValue(bands) {
   // write your code here & return value
+  const firstTwoColors = `${Object.values(bands.color1)}${Object.values(bands.color2)}`;
+  const colorMultiplier = +firstTwoColors * Object.values(bands.multiplier);
+  return colorMultiplier;
 }
 
 /**
@@ -151,6 +156,17 @@ function formatNumber(val) {
  */
 function getTolerance(color) {
   // write your code here & return value
+  const toleranceColor = {
+    brown: '±1%',
+    red: '±2%',
+    green: '±0.5%',
+    blue: '±0.25%',
+    violet: '±0.1%',
+    grey: '±0.05%',
+    gold: '±5%',
+    silver: '±10%',
+  };
+  return toleranceColor[color];
 }
 
 /**
