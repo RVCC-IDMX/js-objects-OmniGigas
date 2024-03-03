@@ -25,6 +25,14 @@
  */
 function getVolumeOfBox(box) {
   // write your code here & return value
+  const arrayBox = Object.values(box);
+  function multiply(array, init) {
+    if (init === array.length - 1) {
+      return (array[init]);
+    }
+    return (array[init] * multiply(array, init + 1));
+  }
+  return multiply(arrayBox, 0);
 }
 
 module.exports = {

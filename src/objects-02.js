@@ -89,9 +89,7 @@ const colorHexCodes = {
  */
 function getColorValue(color) {
   // write your code here & return value
-  const find = Object.values(colorHexCodes.color);
-  const convert = find.join('');
-  return convert;
+  return colorHexCodes[color];
 }
 
 /**
